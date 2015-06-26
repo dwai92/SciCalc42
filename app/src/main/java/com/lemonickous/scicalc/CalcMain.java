@@ -105,7 +105,7 @@ public class CalcMain extends Activity {
     public void setNum(View v) {
         if (num2 == 0) {
             calcDisp.setText("");
-            num1 = 0;
+            num1 = 1;
         }
         switch (v.getId()) {
             case R.id.button0:
