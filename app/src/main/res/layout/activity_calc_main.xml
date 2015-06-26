@@ -1,0 +1,351 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".CalcMain">
+
+    <!-- Display Section -->
+    <TextView android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="32dp"
+        android:gravity="right"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"/>
+    <TextView android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="16dp"
+        android:gravity="left"
+        android:id="@+id/debugText"
+        android:layout_below="@+id/textView"/>
+
+    <!-- Keypad Buttons Start-->
+
+    <!-- Numpad Frame-->
+    <RelativeLayout
+        android:layout_width="@dimen/num_button_frame_width"
+        android:layout_height="@dimen/num_button_frame_height"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/numframe">
+
+        <!-- Button 1 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="1"
+            android:id="@+id/button1"
+            android:onClick="setNum"/>
+        <!-- Button 2 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="2"
+            android:id="@+id/button2"
+            android:layout_toRightOf="@+id/button1"
+            android:layout_marginLeft="@dimen/button_border_margin"
+            android:layout_marginRight="@dimen/button_border_margin"
+            android:onClick="setNum"/>
+        <!-- Button 3 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="3"
+            android:id="@+id/button3"
+            android:layout_toRightOf="@+id/button2"
+            android:onClick="setNum"/>
+        <!-- Button 4 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="4"
+            android:id="@+id/button4"
+            android:layout_below="@+id/button1"
+            android:layout_alignParentLeft="true"
+            android:onClick="setNum"/>
+        <!-- Button 5 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="5"
+            android:id="@+id/button5"
+            android:layout_toRightOf="@+id/button4"
+            android:layout_below="@+id/button2"
+            android:layout_marginLeft="@dimen/button_border_margin"
+            android:layout_marginRight="@dimen/button_border_margin"
+            android:onClick="setNum"/>
+        <!-- Button 6 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="6"
+            android:id="@+id/button6"
+            android:layout_toRightOf="@+id/button5"
+            android:layout_below="@+id/button3"
+            android:onClick="setNum"/>
+        <!-- Button 7 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="7"
+            android:id="@+id/button7"
+            android:layout_below="@+id/button4"
+            android:layout_alignParentLeft="true"
+            android:onClick="setNum"/>
+        <!-- Button 8 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="8"
+            android:id="@+id/button8"
+            android:layout_toRightOf="@+id/button7"
+            android:layout_below="@+id/button5"
+            android:layout_marginLeft="@dimen/button_border_margin"
+            android:layout_marginRight="@dimen/button_border_margin"
+            android:onClick="setNum"/>
+        <!-- Button 9 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="9"
+            android:id="@+id/button9"
+            android:layout_toRightOf="@+id/button8"
+            android:layout_below="@+id/button6"
+            android:onClick="setNum"/>
+        <!-- Button . -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="."
+            android:id="@+id/buttonDecimal"
+            android:layout_below="@+id/button7"
+            android:layout_alignParentLeft="true"
+            android:onClick="setDecimal"/>
+        <!-- Button 0 -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="0"
+            android:id="@+id/button0"
+            android:layout_toRightOf="@+id/button7"
+            android:layout_below="@+id/button8"
+            android:layout_marginLeft="@dimen/button_border_margin"
+            android:layout_marginRight="@dimen/button_border_margin"
+            android:onClick="setNum"/>
+        <!-- Button = -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="="
+            android:id="@+id/buttonEquals"
+            android:layout_toRightOf="@+id/button0"
+            android:layout_below="@+id/button9"
+            android:onClick="solveIt"/>
+        <!-- Button + -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="+"
+            android:id="@+id/buttonPlus"
+            android:layout_alignParentRight="true"
+            android:onClick="setOperation"/>
+        <!-- Button - -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="-"
+            android:id="@+id/buttonMinus"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/buttonPlus"
+            android:onClick="setOperation"/>
+        <!-- Button × -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="×"
+            android:id="@+id/buttonMultiply"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/buttonMinus"
+            android:onClick="setOperation"/>
+        <!-- Button / -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/num_button_width"
+            android:layout_height="@dimen/num_button_height"
+            android:text="÷"
+            android:id="@+id/buttonDivide"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/buttonMultiply"
+            android:onClick="setOperation"/>
+    </RelativeLayout>
+
+    <!-- Manipulation Frame -->
+    <RelativeLayout
+        android:layout_width="@dimen/num_button_frame_width"
+        android:layout_height="@dimen/manip_frame_height"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/manipFrame"
+        android:layout_below="@+id/textView">
+
+        <!-- Button Clear -->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:text="C"
+            android:id="@+id/clear"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:onClick="clear"/>
+    </RelativeLayout>
+
+    <!-- Extended Operations Frame -->
+    <RelativeLayout
+        android:layout_width="@dimen/num_button_frame_width"
+        android:layout_height="@dimen/ext_op_frame_height"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/extOpsFrame"
+        android:layout_above="@+id/numframe">
+        <!-- Button square -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="x^2"
+            android:id="@+id/buttonSquare"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:onClick="setOperation"/>
+        <!-- Button cube -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="x^3"
+            android:id="@+id/buttonCube"
+            android:layout_toRightOf="@+id/buttonSquare"
+            android:layout_alignParentBottom="true"
+            android:onClick="setOperation"/>
+        <!-- Button power -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="x^y"
+            android:id="@+id/buttonPower"
+            android:layout_toRightOf="@+id/buttonCube"
+            android:layout_alignParentBottom="true"
+            android:onClick="setOperation"/>
+        <!-- Button inverse -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="x^y"
+            android:id="@+id/buttonInverse"
+            android:layout_toRightOf="@+id/buttonPower"
+            android:layout_alignParentBottom="true"
+            android:onClick="setOperation"/>
+        <!-- Button square root -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="√"
+            android:id="@+id/buttonSqrt"
+            android:layout_toRightOf="@+id/buttonInverse"
+            android:layout_alignParentBottom="true"
+            android:onClick="setOperation"/>
+        <!-- Button cube root -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="3√"
+            android:id="@+id/buttonCubert"
+            android:layout_toRightOf="@+id/buttonSqrt"
+            android:layout_alignParentBottom="true"
+            android:onClick="setOperation"/>
+        <!-- Button log10 -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="log10"
+            android:textSize="11dp"
+            android:id="@+id/buttonLog10"
+            android:layout_toRightOf="@+id/buttonCube"
+            android:layout_above="@+id/buttonSquare"
+            android:layout_alignParentLeft="true"
+            android:onClick="setOperation"/>
+        <!-- Button loge -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="ln"
+            android:id="@+id/buttonLoge"
+            android:layout_toRightOf="@+id/buttonLog10"
+            android:layout_above="@+id/buttonSquare"
+            android:onClick="setOperation"/>
+        <!-- Button factorial -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="x!"
+            android:id="@+id/buttonFactorial"
+            android:layout_toRightOf="@+id/buttonLoge"
+            android:layout_above="@+id/buttonSquare"
+            android:onClick="setOperation"/>
+        <!-- Button nPr -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="nPr"
+            android:id="@+id/buttonnPr"
+            android:layout_toRightOf="@+id/buttonFactorial"
+            android:layout_above="@+id/buttonSquare"
+            android:onClick="setOperation"/>
+        <!-- Button nCr -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="nCr"
+            android:id="@+id/buttonnCr"
+            android:layout_toRightOf="@+id/buttonnPr"
+            android:layout_above="@+id/buttonSquare"
+            android:onClick="setOperation"/>
+        <!-- Button % -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="%"
+            android:id="@+id/buttonPercent"
+            android:layout_toRightOf="@+id/buttonnCr"
+            android:layout_above="@+id/buttonSquare"
+            android:onClick="setOperation"/>
+        <!-- Button sin -->
+        <Button
+            android:layout_width="@dimen/ext_op_button_width"
+            android:layout_height="@dimen/ext_op_button_height"
+            android:text="%"
+            android:id="@+id/buttonPercent"
+            android:layout_toRightOf="@+id/buttonnCr"
+            android:layout_above="@+id/buttonSquare"
+            android:onClick="setOperation"/>
+
+    </RelativeLayout>
+
+    <!-- Keypad Buttons End-->
+
+
+</RelativeLayout>
+
